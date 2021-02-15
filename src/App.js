@@ -13,7 +13,6 @@ export default function App() {
        <h1>React Weather App</h1>
        <Search />
        <Weather />
-       <button className = "btn btn-primary">hello</button>
       <p className="App-header"> 
         <a 
           className="App-link"
