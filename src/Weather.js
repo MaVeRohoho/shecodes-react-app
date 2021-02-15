@@ -4,16 +4,15 @@ import React, {useState} from "react";
 import axios from "axios"; 
 
 export default function Weather() {
-const [temperature, setTemperature] = useState (null);
 const [ready, setReady] = useState (false); 
 const [weather, setWeather] = useState({});
 
 function handleResponse (response){
-  setTemperature (response.data.main.temp);
   setReady (true);
   setWeather({
-      description: response.data.weather[0].description,
       temperature: response.data.main.temp,
+      city: response.data.name,
+      description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -40,7 +39,7 @@ if (ready){
                 <hr />
                 <div className="row">
                     <div className="col-5">
-                        <h1 id="city">Zurich</h1>
+                        <h1 id="city">{weather.city}</h1>
                     </div>
                     <div className="col-2">
                         <div className="iconSize">
@@ -50,7 +49,7 @@ if (ready){
                         </div>
                     </div>
                     <div className="col-1">
-                        <h2 id="temperature">{Math.round(temperature)}</h2>
+                        <h2 id="temperature">{Math.round(weather.temperature)}</h2>
                     </div>
                     <div className="col-1">
                         <h2>°</h2>
@@ -67,13 +66,13 @@ if (ready){
                     <div className="col-6">
                         <ul>
                             <div >Last Update: <li id="date"></li></div>
-                            <li id="description">Cloudy</li>
+                            <li id="description">{weather.description}</li>
                         </ul>
                     </div>
                     <div className="col-6">
                         <ul>
-                            <li>Humidity: <span id="humid"></span> % </li>
-                            <li>Wind: <span id="wind"></span> km/h </li>
+                            <li>Humidity: <span id="humid">{weather.humidity}</span> % </li>
+                            <li>Wind: <span id="wind">{weather.wind}</span> km/h </li>
                         </ul>
                     </div>
                 </div>
@@ -86,7 +85,7 @@ if (ready){
 }else{
 const apiKey = "fc50e00c9bbae52d3e97a4dfd4c8a5f5";
 let city = "Zurich";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${weather.city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(handleResponse);
   
 return "Loading..."
