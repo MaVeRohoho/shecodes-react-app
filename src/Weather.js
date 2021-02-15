@@ -44,7 +44,7 @@ if (ready){
                     <div className="col-2">
                         <div className="iconSize">
                             <div id="mainIcon">
-                                <img src="" alt="" id="iconOpenWeather" />
+                                <img src= {weather.icon} alt="" id="iconOpenWeather" />
                             </div>
                         </div>
                     </div>
@@ -71,8 +71,8 @@ if (ready){
                     </div>
                     <div className="col-6">
                         <ul>
-                            <li>Humidity: <span id="humid">{weather.humidity}</span> % </li>
-                            <li>Wind: <span id="wind">{weather.wind}</span> km/h </li>
+                            <li>Humidity: <span id="humid">{Math.round(weather.humidity)}</span> % </li>
+                            <li>Wind: <span id="wind">{Math.round(weather.wind)}</span> km/h </li>
                         </ul>
                     </div>
                 </div>
@@ -84,7 +84,8 @@ if (ready){
   ); 
 }else{
 const apiKey = "fc50e00c9bbae52d3e97a4dfd4c8a5f5";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${weather.city}&appid=${apiKey}&units=metric`;
+let city = "Zurich"
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(handleResponse);
   
 return "Loading..."
