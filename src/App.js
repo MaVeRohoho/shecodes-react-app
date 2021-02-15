@@ -1,17 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import React from "react";
-import Search from "./Search";
 import Weather from "./Weather";
-
-
 
 export default function App() {
   return (
     <div className="App">
      <div className="container">
        <h1>React Weather App</h1>
-       <Weather />
+       <Weather defaultCity ="Bern" />
       <p className="App-header"> 
         <a 
           className="App-link"
