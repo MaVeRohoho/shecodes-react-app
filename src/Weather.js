@@ -84,7 +84,6 @@ if (ready){
   ); 
 }else{
 const apiKey = "fc50e00c9bbae52d3e97a4dfd4c8a5f5";
-let city = "Zurich";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${weather.city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(handleResponse);
   
