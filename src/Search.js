@@ -2,14 +2,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function Search() {
+export default function Weather() {
   const [city, setCity] = useState(" ");
   const [load, setLoad] = useState(false);
-  const [search, setSearch] = useState({});
+  const [weather, setWeather] = useState({});
 
-  function displaySearch(response) {
+  function displayWeather(response) {
     setLoad(true);
-    setSearch({
+    setWeather({
       description: response.data.weather[0].description,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
@@ -22,7 +22,7 @@ export default function Search() {
     event.preventDefault();
     let apiKey = "fc50e00c9bbae52d3e97a4dfd4c8a5f5";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displaySearch);
+    axios.get(apiUrl).then(displayWeather);
   }
   function updateCity(event) {
     setCity(event.target.value);
@@ -40,16 +40,16 @@ export default function Search() {
 
   if (load) {
     return (
-      <div className="Search">
+      <div className="Weather">
         {form}
         <ul>
-          <li>Description: {search.description}</li>
-          <li>Temperature: {Math.round(search.temperature)}°C</li>
-          <li>Wind: {Math.round(search.wind)}km/h</li>
-          <li>Humidity: {Math.round(search.humidity)}%</li>
+          <li>Description: {weather.description}</li>
+          <li>Temperature: {Math.round(weather.temperature)}°C</li>
+          <li>Wind: {Math.round(weather.wind)}km/h</li>
+          <li>Humidity: {Math.round(weather.humidity)}%</li>
           <li>
             {" "}
-            <img src={search.icon} alt="Search Icon" />
+            <img src={weather.icon} alt="Weather Icon" />
           </li>
         </ul>
       </div>

@@ -11,18 +11,17 @@ export default function App() {
     <div className="App">
      <div className="container">
        <h1>React Weather App</h1>
-       <Search />
        <Weather />
       <p className="App-header"> 
         <a 
           className="App-link"
-          href="https://fervent-carson-13aa9a.netlify.app/"
+          href="https://github.com/MaVeRohoho/shecodes-react-app"
           target="_blank"
           rel="noopener noreferrer"
         > Open-source code by: 
           Margot Rohner
         </a>
-      </p>
+      🌹 </p>
     </div>
     </div> 
   );

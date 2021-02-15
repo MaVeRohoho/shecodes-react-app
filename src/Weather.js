@@ -1,8 +1,25 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './Weather.css';
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios"; 
 
 export default function Weather() {
+const [temperature, setTemperature] = useState (null);
+const [ready, setReady] = useState (false); 
+const [weather, setWeather] = useState({});
+
+function handleResponse (response){
+  setTemperature (response.data.main.temp);
+  setReady (true);
+  setWeather({
+      description: response.data.weather[0].description,
+      temperature: response.data.main.temp,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    });
+}
+if (ready){
   return (
   <div className="Weather">
       <div className="weather-wrapper">
@@ -33,7 +50,7 @@ export default function Weather() {
                         </div>
                     </div>
                     <div className="col-1">
-                        <h2 id="temperature">2</h2>
+                        <h2 id="temperature">{Math.round(temperature)}</h2>
                     </div>
                     <div className="col-1">
                         <h2>°</h2>
@@ -66,4 +83,13 @@ export default function Weather() {
     </div>
   </div>
   ); 
+}else{
+const apiKey = "fc50e00c9bbae52d3e97a4dfd4c8a5f5";
+let city = "Zurich";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(handleResponse);
+  
+return "Loading..."
+} 
+
 }

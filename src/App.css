@@ -7,11 +7,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 40px;
 }
 
 .App-link {
   color: black;
   font-size: small;
   text-decoration: none;
+  font-size: 12px;
 }
