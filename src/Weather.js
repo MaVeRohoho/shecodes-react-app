@@ -6,7 +6,8 @@ import axios from "axios";
 
 export default function Weather(props) {
 const [weather, setWeather] = useState({ready: false});
-
+const [city, setCity] =  useState (props.defaultCity);
+ 
 function handleResponse (response){
   setWeather({
       ready: true,
@@ -19,15 +20,32 @@ function handleResponse (response){
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     });
 }
+function search (){
+const apiKey = "fc50e00c9bbae52d3e97a4dfd4c8a5f5";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(handleResponse);
+  
+
+}
+
+
+function handleSubmit (event){
+  event.preventDefault() ;
+  search();
+}
+function handleCity (event){
+setCity (event.target.value);
+}
+
 if (weather.ready){
   return (
   <div className="Weather">
       <div className="weather-wrapper">
-                <form className="search-form" id="search-form">
+                <form onSubmit = {handleSubmit} className="search-form" id="search-form">
                     <div className="row">
                         <div className="col-6">
                             <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off"
-                                id="city-input" className="form-control shadow-sm" /> 
+                                id="city-input" className="form-control shadow-sm"  onChange = {handleCity}/> 
                         </div>
                         <div className="col-3"> 
                             <input type="submit" value="Search" className="form-control btn btn-outline-dark shadow-sm" />
@@ -84,10 +102,7 @@ if (weather.ready){
   </div>
   ); 
 }else{
-const apiKey = "fc50e00c9bbae52d3e97a4dfd4c8a5f5";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(handleResponse);
-  
+
 return "Loading..."
 } 
 
