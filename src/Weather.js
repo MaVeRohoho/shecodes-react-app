@@ -39,10 +39,10 @@ if (weather.ready){
                 </form>
                 <hr />
                 <div className="row">
-                    <div className="col-5">
+                    <div className="col-4">
                         <h1 id="city">{weather.city}</h1>
                     </div>
-                    <div className="col-2">
+                    <div className="col-3">
                         <div className="iconSize">
                             <div id="mainIcon">
                                 <img src= {weather.icon} alt="" id="iconOpenWeather" />
