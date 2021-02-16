@@ -4,14 +4,14 @@ import React, {useState} from "react";
 import axios from "axios"; 
 
 export default function Weather(props) {
-const [weather, setWeather] = useState({ready: false});
+let [weather, setWeather] = useState({ready: false});
 
 function handleResponse (response){
   setWeather({
       ready: true,
       temperature: response.data.main.temp,
       city: response.data.name,
-      date: "Tuesday", 
+      date: new Date(response.data.coord.dt *1000),
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
@@ -65,7 +65,7 @@ if (weather.ready){
                 <div className="row">
                     <div className="col-6">
                         <ul>
-                            <li id="date">Date: {weather.date}</li>
+                            <li id="date">Date: <DateFormat date = {weather.date}/></li>
                             <li id="description">{weather.description}</li>
                         </ul>
                     </div>
