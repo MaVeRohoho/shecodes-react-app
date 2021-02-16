@@ -102,7 +102,7 @@ if (weather.ready){
   </div>
   ); 
 }else{
-
+search();
 return "Loading..."
 } 
 
