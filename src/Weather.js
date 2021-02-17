@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import DateFormat from "./DateFormat";
+import Icons from "./Icons";
 import './Weather.css';
 import React, {useState} from "react";
 import axios from "axios"; 
@@ -17,17 +18,14 @@ function handleResponse (response){
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      icon: response.data.weather[0].icon,
     });
 }
 function search (){
 const apiKey = "fc50e00c9bbae52d3e97a4dfd4c8a5f5";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(handleResponse);
-  
-
 }
-
 
 function handleSubmit (event){
   event.preventDefault() ;
@@ -57,21 +55,16 @@ if (weather.ready){
                 </form>
                 <hr />
                 <div className="row">
-                    <div className="col-4">
+                    <div className="col-5">
                         <h1 id="city">{weather.city}</h1>
                     </div>
                     <div className="col-3">
-                        <div className="iconSize">
-                            <div id="mainIcon">
-                                <img src= {weather.icon} alt="" id="iconOpenWeather" />
-                            </div>
+                        <div className="float-left">
+                          <Icons code = {props.data.icon}/>
                         </div>
                     </div>
                     <div className="col-1">
-                        <h2 id="temperature">{Math.round(weather.temperature)}</h2>
-                    </div>
-                    <div className="col-1">
-                        <h2>°</h2>
+                        <h2 id="temperature">{Math.round(weather.temperature)}°</h2>
                     </div>
                     <div className="col-3">
                         <div className="units">
@@ -84,8 +77,8 @@ if (weather.ready){
                 <div className="row">
                     <div className="col-6">
                         <ul>
-                            <li id="date"><DateFormat date = {weather.date}/></li>
                             <li id="description">{weather.description}</li>
+                            <li id="date"><DateFormat date = {weather.date}/></li>
                         </ul>
                     </div>
                     <div className="col-6">
