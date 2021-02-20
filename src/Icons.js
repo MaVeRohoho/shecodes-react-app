@@ -1,11 +1,17 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fal } from '@fortawesome/pro-light-svg-icons'
 
-export function Icon(props) {
+library.add(fal)
+
+export default function Icons {
+<i class="fal fa-sun"></i>
     
-  return <i classname="fa"></i>
 }
- 
-
-
+ (
+  <div>
+    <FontAwesomeIcon icon="sun" /> 
+  </div>
+)
