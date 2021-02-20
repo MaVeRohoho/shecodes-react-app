@@ -6,24 +6,25 @@ import { fal } from '@fortawesome/pro-light-svg-icons'
 library.add(fal)
 
 export default function Icons {
-const Showcase = () => (
-  <div>
-    <FontAwesomeIcon icon={['fal', 'sun']} />
-    <FontAwesomeIcon icon={['fal', 'moon-stars']} />
-    <FontAwesomeIcon icon={['fal', 'cloud-sun']} />
-    <FontAwesomeIcon icon={['fal', 'moon-cloud']} />
-    <FontAwesomeIcon icon={['fal', 'cloud']} />
-    <FontAwesomeIcon icon={['fal', 'clouds-sun']} />
-    <FontAwesomeIcon icon={['fal', 'clouds-moon']} />
-    <FontAwesomeIcon icon={['fal', 'cloud-moon-rain']} />
-    <FontAwesomeIcon icon={['fal', 'cloud-showers-heavy']} />
-    <FontAwesomeIcon icon={['fal', 'cloud-sun-rain']} />
-    <FontAwesomeIcon icon={['fal', 'cloud-moon-rain']} />
-    <FontAwesomeIcon icon={['fal', 'thunderstorm-sun']} />
-    <FontAwesomeIcon icon={['fal', 'thunderstorm-moon']} />
-    <FontAwesomeIcon icon={['fal', 'snowflake']} />
-    <FontAwesomeIcon icon={['fal', 'snowflakes']} />
-    <FontAwesomeIcon icon={['fal', 'fog']} />
-</div>
-);
+const codeMapping = {
+"01d": "fal fa-sun",
+"01n": "fal fa-moon-stars", 
+"02d": "fal fa-cloud-sun", 
+"02n": "fal fa-moon-cloud", 
+"03d": "fal fa-cloud", 
+"03n": "fal fa-cloud", 
+"04d": "fal fa-clouds-sun", 
+"04n": "fal fa-clouds-moon", 
+"09d": "fal fa-cloud-showers-heavy", 
+"09n": "fal fa-cloud-moon-rain", 
+"10d": "fal fa-cloud-sun-rain", 
+"10n": "fal fa-cloud-moon-rain", 
+"11d": "fal fa-thunderstorm-sun", 
+"11n": "fal fa-thunderstorm-moon", 
+"13d": "fal fa-snowflake", 
+"13n": "fal fa-snowflakes", 
+"50d": "fal fa-fog", 
+"50n": "fal fa-fog", 
+};
+return <FontAwesomeIcon icon={codeMapping[props.code]} />
 }
