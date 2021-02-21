@@ -5,7 +5,7 @@ import { fal } from '@fortawesome/pro-light-svg-icons'
 
 library.add(fal)
 
-export default function Icons {
+export default function Icons (props){
 const codeMapping = {
 "01d": "fal fa-sun",
 "01n": "fal fa-moon-stars", 
