@@ -1,30 +1,86 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fal } from '@fortawesome/pro-light-svg-icons'
-
-library.add(fal)
-
-export default function Icons (){
-const codeMapping = {
-"01d": "fal fa-sun",
-"01n": "fal fa-moon-stars", 
-"02d": "fal fa-cloud-sun", 
-"02n": "fal fa-moon-cloud", 
-"03d": "fal fa-cloud", 
-"03n": "fal fa-cloud", 
-"04d": "fal fa-clouds-sun", 
-"04n": "fal fa-clouds-moon", 
-"09d": "fal fa-cloud-showers-heavy", 
-"09n": "fal fa-cloud-moon-rain", 
-"10d": "fal fa-cloud-sun-rain", 
-"10n": "fal fa-cloud-moon-rain", 
-"11d": "fal fa-thunderstorm-sun", 
-"11n": "fal fa-thunderstorm-moon", 
-"13d": "fal fa-snowflake", 
-"13n": "fal fa-snowflakes", 
-"50d": "fal fa-fog", 
-"50n": "fal fa-fog", 
-};
-return <FontAwesomeIcon icon={codeMapping[props.code]} />
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fal } from "@fortawesome/pro-light-svg-icons";
+library.add(fal);
+export default function Icons(props) {
+  const codeMapping = {
+    "01d": {
+      prefix: "fal",
+      icon: "sun",
+    },
+    "01n": {
+      prefix: "fal",
+      icon: "moon-stars",
+    },
+    "02d": {
+      prefix: "fal",
+      icon: "cloud-sun",
+    },
+    "02n": {
+      prefix: "fal",
+      icon: "moon-cloud",
+    },
+    "03d": {
+      prefix: "fal",
+      icon: "cloud",
+    },
+    "03n": {
+      prefix: "fal",
+      icon: "cloud",
+    },
+    "04d": {
+      prefix: "fal",
+      icon: "cloud-sun",
+    },
+    "04n": {
+      prefix: "fal",
+      icon: "clouds-moon",
+    },
+    "09d": {
+      prefix: "fal",
+      icon: "cloud-showers-heavy",
+    },
+    "09n": {
+      prefix: "fal",
+      icon: "cloud-moon-rain",
+    },
+    "10d": {
+      prefix: "fal",
+      icon: "cloud-moon-rain",
+    },
+    "10n": {
+      prefix: "fal",
+      icon: "cloud-moon-rain",
+    },
+    "11d": {
+      prefix: "fal",
+      icon: "thunderstorm-moon",
+    },
+    "11n": {
+      prefix: "fal",
+      icon: "thunderstorm-moon",
+    },
+    "13d": {
+      prefix: "fal",
+      icon: "snowflakes",
+    },
+    "13n": {
+      prefix: "fal",
+      icon: "snowflakes",
+    },
+    "50d": {
+      prefix: "fal",
+      icon: "fog",
+    },
+    "50n": {
+      prefix: "fal",
+      icon: "fog",
+    },
+  };
+  return (
+    <FontAwesomeIcon
+      icon={[codeMapping[props.code].prefix, codeMapping[props.code].icon]}
+    />
+  );
 }
