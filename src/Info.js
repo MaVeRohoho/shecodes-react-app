@@ -15,10 +15,8 @@ return (
                           <Icons code = {props.data.icon}/>
                         </div>
                     </div>
-                    <div className="col-1">
-                        <Temperature  celcius ={props.data.temperature} />
-                    </div>
-                    <div className="col-3">
+                     <div className="col-4">
+                    <Temperature celcius={props.data.temperature} />
                     </div>
                 </div>
                 <hr />
