@@ -1,5 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import Info from "./Info";
+import Icons from "./Icons";
+import Info from "./Info";
+import Temperature from "./Temperature";
+
 import './Weather.css';
 import React, {useState} from "react";
 import axios from "axios"; 

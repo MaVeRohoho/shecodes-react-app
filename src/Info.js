@@ -1,6 +1,7 @@
 import React from "react";
 import DateFormat from "./DateFormat";
 import Icons from "./Icons";
+import Temperature from "./Temperature";
 
 export default function Info (props){
 return (
@@ -15,7 +16,7 @@ return (
                         </div>
                     </div>
                     <div className="col-1">
-                        <h2 id="temperature">{Math.round(props.data.temperature)}°</h2>
+                        <Temperature  celcius ={props.data.temperature} />
                     </div>
                     <div className="col-3">
                         <div className="units">
