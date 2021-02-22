@@ -19,10 +19,6 @@ return (
                         <Temperature  celcius ={props.data.temperature} />
                     </div>
                     <div className="col-3">
-                        <div className="units">
-                            <a href="#" id="celcius" className="unit">C     </a>  🌡
-                            <a href="#" id="fahrenheit" className="unit">     F</a>
-                        </div>
                     </div>
                 </div>
                 <hr />
