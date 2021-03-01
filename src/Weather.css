@@ -3,7 +3,6 @@ body {
   color: black;
   background-size: 100%;
 }
-
 .weather-wrapper {
   max-width: 600px;
   margin: 10px auto;
@@ -14,17 +13,12 @@ body {
   background-color: white;
 }
 
-input {
-  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.4);
-}
-
 h1 {
   font-size: 40px;
   font-weight: 100;
   margin-top: 15px;
 }
 h2 {
-  font-size: 40px;
   font-weight: 100;
   margin-top: 15px;
 }
@@ -38,6 +32,9 @@ h2 {
   cursor: default;
   text-decoration: none;
   text-align: left;
+}
+.fal {
+  font-size: 20px;
 }
 ul {
   margin: 0;
@@ -56,9 +53,6 @@ h6 {
   text-align: center;
   font-size: 12px;
 }
-.iconSize {
-  font-size: 40px;
-}
 .iconOpenWeather.weatherForecast {
   text-align: center;
   font-size: 12px;
@@ -69,4 +63,7 @@ a {
 p {
   font-size: 12px;
   color: white;
+}
+row.mainInfo {
+  padding-top: 3px;
 }

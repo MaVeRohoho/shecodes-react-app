@@ -79,7 +79,7 @@ export default function Icons(props) {
     },
   };
   return (
-    <FontAwesomeIcon
+    <FontAwesomeIcon 
       icon={[codeMapping[props.code].prefix, codeMapping[props.code].icon]}
     />
   );

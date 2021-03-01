@@ -10,10 +10,8 @@ return (
                     <div className="col-5">
                         <h1 id="city">{props.data.city}</h1>
                     </div>
-                    <div className="col-3">
-                        <div className="float-left">
+                    <div className="col-2">
                           <Icons code = {props.data.icon}/>
-                        </div>
                     </div>
                      <div className="col-4">
                     <Temperature celcius={props.data.temperature} />

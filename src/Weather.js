@@ -34,8 +34,7 @@ setCity (event.target.value);
 }
 if (weather.ready){
   return (
-  <div className="Weather">
-      <div className="weather-wrapper">
+  <div className="weather-wrapper">
                 <form onSubmit = {handleSubmit} className="search-form" id="search-form">
                     <div className="row">
                         <div className="col-6">
@@ -57,7 +56,6 @@ if (weather.ready){
                   Forecast
                 </div>
     </div>
-  </div>
   ); 
 }else{
 search();
