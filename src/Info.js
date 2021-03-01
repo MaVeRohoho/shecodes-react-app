@@ -5,12 +5,12 @@ import Temperature from "./Temperature";
 
 export default function Info (props){
 return (
-<div className ="WeatherInfo" >   
+<div className ="Info" >   
  <div className="row">
                     <div className="col-5">
                         <h1 id="city">{props.data.city}</h1>
                     </div>
-                    <div className="col-2">
+                    <div className="col-2" id= "topIcon">
                           <Icons code = {props.data.icon}/>
                     </div>
                      <div className="col-4">

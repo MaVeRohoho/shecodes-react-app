@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import Info from "./Info";
+import Forecast from "./Forecast";
 import './Weather.css';
 import React, {useState} from "react";
 import axios from "axios"; 
@@ -7,7 +8,6 @@ import axios from "axios";
 export default function Weather(props) {
 const [weather, setWeather] = useState({ready: false});
 const [city, setCity] =  useState (props.defaultCity);
- 
 function handleResponse (response){
   setWeather({
       ready: true,
@@ -53,7 +53,7 @@ if (weather.ready){
                 <Info data = {weather}/> 
                 <hr />
                 <div className="row" id="forecast">
-                  Forecast
+                  <Forecast  city = {weather.city}/>
                 </div>
     </div>
   ); 
