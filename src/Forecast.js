@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
+import Icons from "./Icons";
 
 
 export default function Forecast (props) {
@@ -15,7 +16,7 @@ if (loaded) {
     return (
     <div className ="WeatherForecast">
     10:00
-    <WeatherIcon code = {forecast.list[0].weather[0].icon}/>
+    <Icons code = {forecast.list[0].weather[0].icon}/>
    {Math.round(forecast.list[0].main.temp)}°C
    </div>
     );
