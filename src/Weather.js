@@ -44,9 +44,6 @@ if (weather.ready){
                         <div className="col-3"> 
                             <input type="submit" value="Search" className="form-control btn btn-outline-dark shadow-sm" />
                         </div>
-                        <div className="col-3">
-                            <button type="button" className="btn btn-outline-dark w-100" id= "my-weather-button">My Weather</button>
-                        </div>
                     </div>
                 </form>
                 <hr />

@@ -80,7 +80,7 @@ export default function Icons(props) {
   };
   return (
     <FontAwesomeIcon 
-      icon={[codeMapping[props.code].prefix, codeMapping[props.code].icon]}
+      icon={[codeMapping[props.code].prefix, codeMapping[props.code].icon]} size = "3x"
     />
   );
 }

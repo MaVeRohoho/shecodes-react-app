@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
+import "./Forecast.css";
 import Icons from "./Icons";
 
 
@@ -8,7 +9,7 @@ const [loaded,setLoaded] = useState (false);
 const [forecast,setForecast] = useState (null);
 
 function handleForecast(response){
-    setForecast (response.date);
+    setForecast (response.data);
     setLoaded (true);
 }
 
