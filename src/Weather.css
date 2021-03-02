@@ -63,3 +63,8 @@ p {
 row.mainInfo {
   padding-top: 3px;
 }
+
+.WeatherForecast svg {
+  display: block;
+  margin: 5px auto;
+}
