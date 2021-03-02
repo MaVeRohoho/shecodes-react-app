@@ -37,7 +37,7 @@ if (weather.ready){
   <div className="weather-wrapper">
                 <form onSubmit = {handleSubmit} className="search-form" id="search-form">
                     <div className="row">
-                        <div className="col-6">
+                        <div className="col-9">
                             <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off"
                                 id="city-input" className="form-control shadow-sm"  onChange = {handleCity}/> 
                         </div>
@@ -49,9 +49,7 @@ if (weather.ready){
                 <hr />
                 <Info data = {weather}/> 
                 <hr />
-                <div className="row" id="forecast">
                   <Forecast  city = {weather.city}/>
-                </div>
     </div>
   ); 
 }else{
