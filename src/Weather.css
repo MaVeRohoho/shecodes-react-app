@@ -1,3 +1,7 @@
+.App {
+  margin-top: 40px;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: black;
@@ -67,4 +71,9 @@ row.mainInfo {
 .WeatherForecast svg {
   display: block;
   margin: 5px auto;
+  font-size: 18px;
+}
+row.forecast {
+  display: block;
+  margin-left: 20px;
 }

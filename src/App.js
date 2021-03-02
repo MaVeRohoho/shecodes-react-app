@@ -7,8 +7,7 @@ export default function App() {
   return (
     <div className="App">
      <div className="container">
-       <h1>React Weather App</h1>
-       <Weather defaultCity ="Zürich" />
+       <Weather defaultCity ="Zurich" />
       <p className="App-header"> 
         <a 
           className="App-link"
